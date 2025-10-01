@@ -138,6 +138,8 @@ exports.login = async (req, res) => {
         lastName: user.lastName,
         experienceLevel: user.experienceLevel,
         skills: user.skills,
+        isVerified: user.isVerified,
+        isAdmin: user.isAdmin,
       },
     });
   } catch (error) {

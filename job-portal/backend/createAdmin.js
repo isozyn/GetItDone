@@ -12,18 +12,17 @@ const createAdminUser = async () => {
 
     console.log('Connected to MongoDB');
 
-    // Check if admin already exists
-    const existingAdmin = await User.findOne({ email: 'admin@jobportal.com' });
-    
-    if (existingAdmin) {
-      console.log('Admin user already exists!');
-      console.log('Email: admin@jobportal.com');
-      console.log('ID Number: ADMIN001');
-      await mongoose.connection.close();
-      process.exit(0);
+    // Remove all current admins
+    const removedAdmins = await User.deleteMany({ isAdmin: true });
+    console.log(`Removed ${removedAdmins.deletedCount} admin(s).`);
+
+    // Remove any user with idNumber 'ADMIN001'
+    const removedById = await User.deleteMany({ idNumber: 'ADMIN001' });
+    if (removedById.deletedCount > 0) {
+      console.log(`Removed ${removedById.deletedCount} user(s) with idNumber 'ADMIN001'.`);
     }
 
-    // Create admin user
+    // Create new admin user
     const adminUser = new User({
       idNumber: 'ADMIN001',
       email: 'admin@jobportal.com',
@@ -32,7 +31,8 @@ const createAdminUser = async () => {
       lastName: 'User',
       phone: '0000000000',
       isVerified: true,
-      experienceLevel: 'experienced'
+      experienceLevel: 'experienced',
+      isAdmin: true
     });
 
     await adminUser.save();

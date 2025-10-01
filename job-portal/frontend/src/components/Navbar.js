@@ -19,24 +19,51 @@ const Navbar = () => {
           </div>
           
           <div className="hidden md:flex items-center space-x-6">
-            <Link to="/" className="text-white hover:text-indigo-200 transition font-medium">
-              Home
-            </Link>
-            <Link to="/jobs" className="text-white hover:text-indigo-200 transition font-medium">
-              Browse Jobs
-            </Link>
-            <Link to="/ngo/status" className="text-white hover:text-indigo-200 transition font-medium">
-              Check Status
-            </Link>
-            
             {user ? (
               <>
-                <Link to="/dashboard" className="text-white hover:text-indigo-200 transition font-medium">
-                  Dashboard
+                {/* Home is now the dashboard for logged in users */}
+                <Link to="/" className="text-white hover:text-indigo-200 transition font-medium">
+                  Home
                 </Link>
-                <Link to="/admin" className="text-white hover:text-indigo-200 transition font-medium">
-                  Admin
+                {/* Browse Jobs is the jobs page */}
+                <Link to="/jobs" className="text-white hover:text-indigo-200 transition font-medium">
+                  Browse Jobs
                 </Link>
+                {/* Hide Check Status when logged in */}
+                {/* Show Admin only for admin users */}
+                {user.isAdmin && (
+                  <>
+                    <Link to="/Admin-Dashboard" className="text-white hover:text-indigo-200 transition font-medium">
+                      Admin Dashboard
+                    </Link>
+                    <Link to="/admin/users" className="text-white hover:text-indigo-200 transition font-medium">
+                      Manage Users
+                    </Link>
+                    <Link to="/admin/classes" className="text-white hover:text-indigo-200 transition font-medium">
+                      Manage Classes
+                    </Link>
+                      <Link to="/profile" className="text-white hover:text-indigo-200 transition font-medium">
+                        Profile
+                      </Link>
+                  </>
+                )}
+                {/* User tabs for classes */}
+                {(!user.isAdmin) && (
+                  <>
+                    <Link to="/my-classes" className="text-white hover:text-indigo-200 transition font-medium">
+                      My Classes
+                    </Link>
+                    <Link to="/available-classes" className="text-white hover:text-indigo-200 transition font-medium">
+                      Available Classes
+                    </Link>
+                    <Link to="/completed-classes" className="text-white hover:text-indigo-200 transition font-medium">
+                      Completed Classes
+                    </Link>
+                      <Link to="/profile" className="text-white hover:text-indigo-200 transition font-medium">
+                        Profile
+                      </Link>
+                  </>
+                )}
                 <button
                   onClick={logout}
                   className="bg-white text-indigo-600 px-4 py-2 rounded-lg font-semibold hover:bg-indigo-50 transition"
@@ -46,6 +73,15 @@ const Navbar = () => {
               </>
             ) : (
               <>
+                <Link to="/" className="text-white hover:text-indigo-200 transition font-medium">
+                  Home
+                </Link>
+                <Link to="/jobs" className="text-white hover:text-indigo-200 transition font-medium">
+                  Browse Jobs
+                </Link>
+                <Link to="/ngo/status" className="text-white hover:text-indigo-200 transition font-medium">
+                  Check Status
+                </Link>
                 <Link 
                   to="/login" 
                   className="text-white hover:text-indigo-200 transition font-medium"

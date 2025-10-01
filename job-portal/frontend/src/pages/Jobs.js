@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { useAuth } from '../contexts/AuthContext';
 
 const Jobs = () => {
+  const { user } = useAuth();
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -42,13 +44,16 @@ const Jobs = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900">
           Available Jobs
         </h1>
-        <p className="mt-2 text-gray-600">
-          Browse all available job opportunities. Register with our NGO to apply!
-        </p>
+        {(!user || !user.isVerified) && (
+          <p className="mt-2 text-gray-600">
+            Browse all available job opportunities. Register with our NGO to apply!
+          </p>
+        )}
       </div>
 
       <div className="bg-white shadow rounded-lg p-6 mb-8">
@@ -118,13 +123,20 @@ const Jobs = () => {
                     )}
                   </div>
                   <div className="ml-4">
-                    <button 
-                      onClick={() => toast.error('Please register with our NGO to apply for jobs')}
-                      className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
-                      Apply Now
-                    </button>
+                    {user && user.isVerified ? (
+                      <button
+                        onClick={() => toast.success('Application submitted!')}
+                        className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      >
+                        Apply Now
+                      </button>
+                    ) : null}
                   </div>
+                  {(!user || !user.isVerified) && (
+                    <div className="mt-2 text-sm text-red-600">
+                      Please register with our NGO and get verified to apply for jobs.
+                    </div>
+                  )}
                 </div>
               </div>
             ))

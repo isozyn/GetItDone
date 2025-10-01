@@ -1,3 +1,8 @@
+import ManageUsers from './pages/ManageUsers';
+import ManageClasses from './pages/ManageClasses';
+import MyClasses from './pages/MyClasses';
+import AvailableClasses from './pages/AvailableClasses';
+import Profile from './pages/Profile';
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
@@ -11,7 +16,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import SetupPassword from './pages/SetupPassword';
 import VerifyEmail from './pages/VerifyEmail';
-import Dashboard from './pages/Dashboard';
+// import Dashboard from './pages/Dashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import ChangePassword from './pages/ChangePassword';
 import PrivateRoute from './components/PrivateRoute';
@@ -30,38 +35,14 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/setup-password/:token" element={<SetupPassword />} />
         <Route path="/verify/:token" element={<VerifyEmail />} />
-        <Route
-          path="/dashboard"
-          element={
-            <PrivateRoute>
-              <Dashboard />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/user/dashboard"
-          element={
-            <PrivateRoute>
-              <Dashboard />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/admin/dashboard"
-          element={
-            <PrivateRoute>
-              <AdminDashboard />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/change-password"
-          element={
-            <PrivateRoute>
-              <ChangePassword />
-            </PrivateRoute>
-          }
-        />
+        <Route path="/admin-dashboard" element={<PrivateRoute><AdminDashboard /></PrivateRoute>} />
+        <Route path="/Admin-Dashboard" element={<PrivateRoute><AdminDashboard /></PrivateRoute>} />
+        <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
+        <Route path="/change-password" element={<PrivateRoute><ChangePassword /></PrivateRoute>} />
+  <Route path="/admin/users" element={<PrivateRoute><ManageUsers /></PrivateRoute>} />
+  <Route path="/admin/classes" element={<PrivateRoute><ManageClasses /></PrivateRoute>} />
+  <Route path="/my-classes" element={<PrivateRoute><MyClasses /></PrivateRoute>} />
+  <Route path="/available-classes" element={<PrivateRoute><AvailableClasses /></PrivateRoute>} />
       </Routes>
     </div>
   );

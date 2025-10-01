@@ -22,4 +22,32 @@ router.post('/login', authController.login);
 router.post('/setup-password/:token', authController.setupPassword);
 router.post('/change-password', authMiddleware, authController.changePassword);
 
+
+// Get current user info for frontend auth
+const User = require('../models/User');
+router.get('/me', authMiddleware, async (req, res) => {
+  try {
+    const user = await User.findById(req.user.userId).select('-password');
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.json({
+      user: {
+        id: user._id,
+        idNumber: user.idNumber,
+        email: user.email,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        experienceLevel: user.experienceLevel,
+        skills: user.skills,
+        isVerified: user.isVerified,
+        isAdmin: user.isAdmin,
+      }
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
 module.exports = router;

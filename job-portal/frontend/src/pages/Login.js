@@ -41,7 +41,7 @@ const Login = () => {
       if (user.idNumber === 'ADMIN001' || user.email === 'admin@jobportal.com') {
         navigate('/admin/dashboard');
       } else {
-        navigate('/user/dashboard');
+        navigate('/'); // Redirect regular users to homepage
       }
     } catch (error) {
       console.error('Login error:', error);

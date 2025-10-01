@@ -40,4 +40,22 @@ router.put('/profile', auth, async (req, res) => {
   }
 });
 
+
+// Get user's job history
+router.get('/job-history', auth, async (req, res) => {
+  try {
+    const User = require('../models/User');
+  const Job = require('../models/job');
+    const user = await User.findById(req.user.userId).populate('preferredJobs');
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    // Assuming preferredJobs is an array of job IDs the user applied to
+    res.json(user.preferredJobs || []);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
 module.exports = router;

@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
 
   const fetchUser = async () => {
     try {
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/auth/me`);
+  const response = await axios.get(`/auth/me`);
       setUser(response.data.user);
     } catch (error) {
       localStorage.removeItem('token');
