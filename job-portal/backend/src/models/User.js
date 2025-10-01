@@ -33,6 +33,8 @@ const userSchema = new mongoose.Schema({
     default: false,
   },
   verificationToken: String,
+  passwordSetupToken: String,
+  passwordSetupExpires: Date,
   experienceLevel: {
     type: String,
     enum: ['entry', 'intermediate', 'experienced'],

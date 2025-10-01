@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../contexts/AuthContext';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-const Dashboard = () => {
-  const { user } = useAuth();
+const Jobs = () => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [experienceLevel, setExperienceLevel] = useState(user?.experienceLevel || 'entry');
 
   const jobCategories = [
     { value: 'all', label: 'All Categories' },
@@ -43,57 +40,19 @@ const Dashboard = () => {
     }
   };
 
-  const updateExperience = async () => {
-    try {
-      await axios.put('/users/experience', { experienceLevel });
-      toast.success('Experience level updated');
-      fetchJobs();
-    } catch (error) {
-      toast.error('Failed to update experience level');
-    }
-  };
-
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900">
-          Welcome back, {user?.firstName}!
+          Available Jobs
         </h1>
         <p className="mt-2 text-gray-600">
-          Find jobs that match your skills and experience level.
+          Browse all available job opportunities. Register with our NGO to apply!
         </p>
       </div>
 
       <div className="bg-white shadow rounded-lg p-6 mb-8">
-        <h2 className="text-lg font-medium text-gray-900 mb-4">Your Profile Settings</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Experience Level
-            </label>
-            <select
-              value={experienceLevel}
-              onChange={(e) => setExperienceLevel(e.target.value)}
-              className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            >
-              <option value="entry">Entry Level</option>
-              <option value="intermediate">Intermediate</option>
-              <option value="experienced">Experienced</option>
-            </select>
-          </div>
-          <div className="flex items-end">
-            <button
-              onClick={updateExperience}
-              className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            >
-              Update Experience
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-white shadow rounded-lg p-6 mb-8">
-        <h2 className="text-lg font-medium text-gray-900 mb-4">Job Filters</h2>
+        <h2 className="text-lg font-medium text-gray-900 mb-4">Filter Jobs</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -116,13 +75,17 @@ const Dashboard = () => {
 
       <div className="bg-white shadow rounded-lg">
         <div className="px-6 py-4 border-b border-gray-200">
-          <h2 className="text-lg font-medium text-gray-900">Available Jobs</h2>
+          <h2 className="text-lg font-medium text-gray-900">
+            {jobs.length} Job{jobs.length !== 1 ? 's' : ''} Found
+          </h2>
         </div>
         <div className="divide-y divide-gray-200">
           {loading ? (
             <div className="p-6 text-center text-gray-500">Loading jobs...</div>
           ) : jobs.length === 0 ? (
-            <div className="p-6 text-center text-gray-500">No jobs found</div>
+            <div className="p-6 text-center text-gray-500">
+              No jobs found for this category
+            </div>
           ) : (
             jobs.map((job) => (
               <div key={job._id} className="p-6 hover:bg-gray-50">
@@ -155,7 +118,10 @@ const Dashboard = () => {
                     )}
                   </div>
                   <div className="ml-4">
-                    <button className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    <button 
+                      onClick={() => toast.error('Please register with our NGO to apply for jobs')}
+                      className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    >
                       Apply Now
                     </button>
                   </div>
@@ -169,4 +135,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Jobs;

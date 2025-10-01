@@ -170,3 +170,54 @@ exports.changePassword = async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 };
+
+exports.setupPassword = async (req, res) => {
+  try {
+    const { token } = req.params;
+    const { password } = req.body;
+
+    if (!password || password.length < 6) {
+      return res.status(400).json({ message: 'Password must be at least 6 characters long' });
+    }
+
+    const user = await User.findOne({
+      passwordSetupToken: token,
+      passwordSetupExpires: { $gt: Date.now() }
+    });
+
+    if (!user) {
+      return res.status(400).json({ message: 'Invalid or expired password setup link' });
+    }
+
+    // Set new password and verify account
+    user.password = password;
+    user.isVerified = true;
+    user.passwordSetupToken = undefined;
+    user.passwordSetupExpires = undefined;
+    await user.save();
+
+    // Generate token for automatic login
+    const loginToken = jwt.sign(
+      { userId: user._id, idNumber: user.idNumber },
+      process.env.JWT_SECRET || 'your-secret-key',
+      { expiresIn: '7d' }
+    );
+
+    res.json({
+      message: 'Password set successfully! You can now access the job portal.',
+      token: loginToken,
+      user: {
+        id: user._id,
+        idNumber: user.idNumber,
+        email: user.email,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        experienceLevel: user.experienceLevel,
+        skills: user.skills,
+      }
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};

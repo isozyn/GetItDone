@@ -19,6 +19,7 @@ router.post(
 
 router.get('/verify/:token', authController.verifyEmail);
 router.post('/login', authController.login);
+router.post('/setup-password/:token', authController.setupPassword);
 router.post('/change-password', authMiddleware, authController.changePassword);
 
 module.exports = router;
