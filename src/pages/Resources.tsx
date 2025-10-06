@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Briefcase, FileText, Users, GraduationCap, TrendingUp } from "lucide-react";
+import { link } from "fs";
 
 const Resources = () => {
   const jobSites = [
@@ -36,24 +37,28 @@ const Resources = () => {
       description: "Learn how to create a professional CV that stands out to employers",
       icon: FileText,
       category: "Career Tools",
+      link:""
     },
     {
       title: "Interview Preparation",
       description: "Tips and techniques for succeeding in job interviews",
       icon: Users,
       category: "Career Tools",
+      link: ""
     },
     {
       title: "Business Registration",
       description: "Information on starting your own small business in South Africa",
       icon: TrendingUp,
       category: "Entrepreneurship",
+      link: "https://bizportal.gov.za/"
     },
     {
       title: "Continuous Learning",
       description: "Free online courses and resources for skills development",
       icon: GraduationCap,
       category: "Education",
+      link: ""
     },
   ];
 
@@ -137,6 +142,16 @@ const Resources = () => {
                       {resource.description}
                     </CardDescription>
                   </CardHeader>
+                  {resource.link && (
+                    <CardContent>
+                      <a href={resource.link} target="_blank" rel="noopener noreferrer">
+                        <Button variant="default" className="w-full">
+                          View Resource
+                          <ExternalLink className="ml-2 h-4 w-4" />
+                        </Button>
+                      </a>
+                    </CardContent>
+                  )}
                 </Card>
               );
             })}

@@ -22,7 +22,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div>
             <Link to="/" className="flex items-center gap-2 font-bold text-xl mb-4">
-              <Heart className="h-6 w-6" fill="currentColor" />
+              <img src="/assets/hand-logo.png" alt="Logo" className="h-8 w-8" />
               <span>GetItDone</span>
             </Link>
             <p className="text-secondary-foreground/80 mb-4">
