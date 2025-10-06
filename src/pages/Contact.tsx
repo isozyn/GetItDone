@@ -211,18 +211,6 @@ const Contact = () => {
                 })}
               </div>
             </div>
-
-            {/* Map Placeholder */}
-            <div className="animate-fade-in" style={{ animationDelay: "200ms" }}>
-              <Card className="shadow-card overflow-hidden">
-                <div className="h-64 bg-muted flex items-center justify-center">
-                  <div className="text-center text-muted-foreground">
-                    <MapPin className="h-12 w-12 mx-auto mb-2 opacity-50" />
-                    <p className="text-sm">Map location</p>
-                  </div>
-                </div>
-              </Card>
-            </div>
           </div>
         </div>
       </div>
