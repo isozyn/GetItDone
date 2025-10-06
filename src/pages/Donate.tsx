@@ -127,7 +127,7 @@ const Donate = () => {
        
             <div className="text-center">
             <Button variant="hero" size="lg">
-              Donate Custom Amount
+              Donate Now
             </Button>
             <div className="mt-20" />
           </div>
