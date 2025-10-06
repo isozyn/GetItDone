@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Heart, Users, GraduationCap } from "lucide-react";
-import heroImage from "@/assets/hero-image.jpg";
+import heroImage from "@/assets/hero-image.jpeg";
 
 const Hero = () => {
   return (
@@ -12,8 +12,9 @@ const Hero = () => {
           src={heroImage}
           alt="Community members learning new skills together"
           className="w-full h-full object-cover"
+          style={{ filter: "brightness(0.85)" }}
         />
-        <div className="absolute inset-0 gradient-hero" />
+        <div className="absolute inset-0 gradient-hero" style={{ opacity: 0.5 }} />
       </div>
 
       {/* Content */}
