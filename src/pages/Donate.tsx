@@ -124,36 +124,13 @@ const Donate = () => {
         </div>
 
         {/* Donation Options */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Choose Your Donation</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            {donationOptions.map((option, index) => (
-              <Card
-                key={index}
-                className="text-center shadow-card hover:shadow-hover transition-smooth cursor-pointer animate-fade-in"
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                <CardHeader>
-                  <CardTitle className="text-3xl gradient-warm bg-clip-text text-transparent">
-                    {option.amount}
-                  </CardTitle>
-                  <CardDescription>{option.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Button variant="default" className="w-full">
-                    Donate
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center">
+       
+            <div className="text-center">
             <Button variant="hero" size="lg">
               Donate Custom Amount
             </Button>
+            <div className="mt-20" />
           </div>
-        </div>
-
         {/* Benefits */}
         <div className="mb-16">
           <Card className="shadow-hover gradient-hero text-card">
