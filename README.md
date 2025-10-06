@@ -1,73 +1,124 @@
-# Welcome to your Lovable project
+# GetItDone - Transforming Lives Through Education
 
-## Project info
+A South African educational NGO empowering communities through free skills training workshops. Our mission is to help individuals overcome unemployment and build sustainable livelihoods through practical education.
 
-**URL**: https://lovable.dev/projects/536769db-8817-46f2-b063-d12c3f057fdd
+## About GetItDone
 
-## How can I edit this code?
+GetItDone provides comprehensive skills training in various sectors including:
+- Sewing and tailoring
+- Gardening and agriculture
+- Domestic services
+- Catering and food preparation
+- Cleaning services
+- Retail and customer service
 
-There are several ways of editing your application.
 
-**Use Lovable**
+## Development Setup
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/536769db-8817-46f2-b063-d12c3f057fdd) and start prompting.
+This project requires Node.js & npm - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Follow these steps to set up the development environment:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone the repository
+git clone https://github.com/isozyn/GetItDone.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project directory
+cd GetItDone
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Technologies Used
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+This project is built with modern web technologies:
 
-**Use GitHub Codespaces**
+- **Vite** - Fast build tool and development server
+- **TypeScript** - Type-safe JavaScript
+- **React** - UI library
+- **shadcn/ui** - Component library
+- **Tailwind CSS** - Utility-first CSS framework
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+src/
+├── components/     # Reusable UI components
+├── pages/         # Page components
+├── hooks/         # Custom React hooks
+├── lib/           # Utility functions
+└── assets/        # Static assets
+```
 
-This project is built with:
+## Available Scripts
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
-## How can I deploy this project?
+## Contributing
 
-Simply open [Lovable](https://lovable.dev/projects/536769db-8817-46f2-b063-d12c3f057fdd) and click on Share -> Publish.
+We welcome contributions to help improve GetItDone's impact. Please feel free to submit issues and pull requests.
 
-## Can I connect a custom domain to my Lovable project?
+## License
 
-Yes, you can!
+This project is open source and available under the MIT License.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Common Git & GitHub Commands
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Below are some essential Git commands you will use when working with this project. Each command includes a brief definition and when to use it:
+
+- `git clone <repo-url>`
+  - **Definition:** Creates a local copy of a remote repository.
+  - **When to use:** When you want to start working on a project hosted on GitHub or another remote server.
+
+- `git pull`
+  - **Definition:** Fetches changes from the remote repository and merges them into your current branch.
+  - **When to use:** To update your local codebase with the latest changes from others before you start working or before pushing your own changes.
+
+- `git fetch`
+  - **Definition:** Downloads new data from the remote repository but does not merge it into your current branch.
+  - **When to use:** To see what others have changed before you pull or to update remote-tracking branches.
+
+- `git status`
+  - **Definition:** Shows the current state of your working directory and staging area.
+  - **When to use:** To see which files have been modified, added, or deleted before committing.
+
+- `git add <file>`
+  - **Definition:** Stages changes for the next commit.
+  - **When to use:** Before committing, to specify which files you want to include in the commit.
+
+- `git commit -m "your message"`
+  - **Definition:** Records staged changes to your local repository with a message describing the changes.
+  - **When to use:** After staging changes, to save a snapshot of your work.
+
+- `git push`
+  - **Definition:** Sends your committed changes to the remote repository.
+  - **When to use:** To share your work with others or back up your changes to GitHub.
+
+- `git checkout <branch>`
+  - **Definition:** Switches your working directory to another branch.
+  - **When to use:** To move between different lines of development or review past work.
+
+- `git branch`
+  - **Definition:** Lists, creates, or deletes branches.
+  - **When to use:** To manage different features or versions of your project.
+
+- `git stash`
+  - **Definition:** Temporarily saves changes that are not ready to commit.
+  - **When to use:** To clean your working directory without losing work, for example, before switching branches.
+
+- `git tag <tagname>`
+  - **Definition:** Creates a reference to a specific commit, often used for releases.
+  - **When to use:** To mark release points (e.g., v1.0.0) in your project history.
+
+- `git log`
+  - **Definition:** Shows the commit history for the current branch.
+  - **When to use:** To review changes and track project history.
+
+These commands will help you manage your code, collaborate with others, and keep track of changes using Git and GitHub.

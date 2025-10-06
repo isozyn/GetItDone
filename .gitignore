@@ -128,7 +128,6 @@ out/
 
 # Gatsby (if ever used)
 .cache/
-public/
 
 # Tailwind CSS
 # (Tailwind output is usually in dist or build, already covered above)

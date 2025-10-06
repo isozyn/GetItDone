@@ -131,76 +131,58 @@ const Services = () => {
           </p>
         </div>
 
-        {/* Workshops */}
-        <div className="space-y-12">
+        {/* Workshops - Grid Layout Like Get Involved */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {workshops.map((workshop, index) => {
             const Icon = workshop.icon;
             return (
               <Card
                 key={index}
-                className="overflow-hidden shadow-card hover:shadow-hover transition-smooth animate-fade-in"
+                className="shadow-card hover:shadow-hover transition-smooth animate-fade-in flex flex-col"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  {/* Image */}
-                  <div className="relative h-64 lg:h-full">
-                    <img
-                      src={workshop.image}
-                      alt={workshop.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
-                    <div className="absolute top-4 left-4">
-                      <div className="w-12 h-12 rounded-full gradient-warm flex items-center justify-center">
-                        <Icon className="h-6 w-6 text-primary-foreground" />
-                      </div>
+                <div className="w-full h-48 rounded-t-lg overflow-hidden">
+                  <img
+                    src={workshop.image}
+                    alt={workshop.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardHeader className="flex flex-col items-center p-6">
+                  <div className="w-12 h-12 rounded-full gradient-warm flex items-center justify-center mb-4">
+                    <Icon className="h-6 w-6 text-primary-foreground" />
+                  </div>
+                  <CardTitle className="text-xl text-center">{workshop.title}</CardTitle>
+                  <CardDescription className="text-base text-center mb-2">
+                    {workshop.description}
+                  </CardDescription>
+                  <div className="flex gap-4 justify-center mb-2">
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-5 w-5 text-primary" />
+                      <span className="text-sm font-medium">{workshop.duration}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Users className="h-5 w-5 text-primary" />
+                      <span className="text-sm font-medium">{workshop.spots}</span>
                     </div>
                   </div>
-
-                  {/* Content */}
-                  <div className="p-6 lg:p-8">
-                    <CardHeader className="p-0 mb-4">
-                      <CardTitle className="text-2xl md:text-3xl">{workshop.title}</CardTitle>
-                      <CardDescription className="text-base">
-                        {workshop.description}
-                      </CardDescription>
-                    </CardHeader>
-
-                    <CardContent className="p-0 space-y-6">
-                      {/* Details */}
-                      <div className="flex gap-6">
-                        <div className="flex items-center gap-2">
-                          <Clock className="h-5 w-5 text-primary" />
-                          <span className="text-sm font-medium">{workshop.duration}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Users className="h-5 w-5 text-primary" />
-                          <span className="text-sm font-medium">{workshop.spots}</span>
-                        </div>
-                      </div>
-
-                      {/* Features */}
-                      <div>
-                        <h4 className="font-semibold mb-3">What You'll Learn:</h4>
-                        <ul className="space-y-2">
-                          {workshop.features.map((feature, idx) => (
-                            <li key={idx} className="flex items-start gap-2">
-                              <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5" />
-                              <span className="text-sm">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* CTA */}
-                      <Link to="/contact" className="block mt-2">
-                        <Button variant="default" size="lg" className="w-full">
-                          Apply for This Workshop
-                        </Button>
-                      </Link>
-                    </CardContent>
-                  </div>
-                </div>
+                </CardHeader>
+                <CardContent className="p-6 flex-1 flex flex-col">
+                  <h4 className="font-semibold mb-3">What You'll Learn:</h4>
+                  <ul className="space-y-2 mb-4">
+                    {workshop.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-2 ">
+                        <CheckCircle className="h-5 w-5 text-secondary shrink-0 mt-0.5 " />
+                        <span className="text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link to="/contact" className="block mt-auto">
+                    <Button variant="default" size="lg" className="w-full">
+                      Apply for This Workshop
+                    </Button>
+                  </Link>
+                </CardContent>
               </Card>
             );
           })}
