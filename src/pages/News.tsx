@@ -1,6 +1,15 @@
+import * as React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Tag } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 
 const News = () => {
   const articles = [
@@ -65,6 +74,50 @@ const News = () => {
     }
   };
 
+  // Carousel API and autoplay state
+  const [api, setApi] = React.useState<CarouselApi | null>(null);
+  const [isPaused, setIsPaused] = React.useState(false);
+
+  // Autoplay: advance every 7 seconds, reset on user interaction, pause on hover/focus
+  React.useEffect(() => {
+    if (!api) return;
+
+    const INTERVAL = 7000; // 7 seconds
+    let timer: number | undefined;
+
+    const start = () => {
+      if (timer) window.clearInterval(timer);
+      timer = window.setInterval(() => {
+        if (!isPaused) api.scrollNext();
+      }, INTERVAL) as unknown as number;
+    };
+
+    const stop = () => {
+      if (timer) {
+        window.clearInterval(timer);
+        timer = undefined;
+      }
+    };
+
+    const reset = () => {
+      stop();
+      start();
+    };
+
+    // start autoplay
+    start();
+
+    // reset autoplay when user interacts
+    api.on("select", reset);
+    api.on("pointerDown", reset);
+
+    return () => {
+      stop();
+      api.off("select", reset);
+      api.off("pointerDown", reset);
+    };
+  }, [api, isPaused]);
+
   return (
     <div className="min-h-screen py-12">
       <div className="container mx-auto px-4">
@@ -78,13 +131,13 @@ const News = () => {
 
         {/* Featured Article */}
         {articles[0] && (
-          <Card className="mb-12 overflow-hidden shadow-hover">
+          <Card className="mb-12 overflow-hidden shadow-hover rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-2">
-              <div className="relative h-64 lg:h-full">
+              <div className="relative h-56 lg:h-80">
                 <img
                   src={articles[0].image}
                   alt={articles[0].title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center rounded-md"
                 />
                 <div className="absolute top-4 left-4">
                   <Badge className={getCategoryColor(articles[0].category)}>
@@ -110,37 +163,50 @@ const News = () => {
           </Card>
         )}
 
-        {/* Articles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {articles.slice(1).map((article, index) => (
-            <Card
-              key={index}
-              className="overflow-hidden shadow-card hover:shadow-hover transition-smooth animate-fade-in"
-              style={{ animationDelay: `${index * 50}ms` }}
-            >
-              <div className="relative h-48">
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute top-4 left-4">
-                  <Badge className={getCategoryColor(article.category)}>
-                    <Tag className="h-3 w-3 mr-1" />
-                    {article.category}
-                  </Badge>
-                </div>
-              </div>
-              <CardHeader>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                  <Calendar className="h-3 w-3" />
-                  {article.date}
-                </div>
-                <CardTitle className="text-xl">{article.title}</CardTitle>
-                <CardDescription>{article.excerpt}</CardDescription>
-              </CardHeader>
-            </Card>
-          ))}
+        {/* Articles Carousel (autoplay every 7s, arrows to navigate) */}
+        <div
+          className="mb-6"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onFocus={() => setIsPaused(true)}
+          onBlur={() => setIsPaused(false)}
+        >
+          <Carousel className="w-full" setApi={(a) => setApi(a)}>
+            <CarouselContent className="items-stretch">
+              {articles.map((article, index) => (
+                <CarouselItem key={index}>
+                  <Card className="overflow-hidden shadow-card hover:shadow-hover h-full">
+                    <div className="relative h-40 md:h-56 lg:h-64">
+                      <img
+                        src={article.image}
+                        alt={article.title}
+                        className="w-full h-full object-cover object-center rounded-md"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <Badge className={getCategoryColor(article.category)}>
+                          <Tag className="h-3 w-3 mr-1" />
+                          {article.category}
+                        </Badge>
+                      </div>
+                    </div>
+                    <CardHeader>
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                        <Calendar className="h-3 w-3" />
+                        {article.date}
+                      </div>
+                      <CardTitle className="text-xl">{article.title}</CardTitle>
+                      <CardDescription>{article.excerpt}</CardDescription>
+                    </CardHeader>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+
+            <div className="relative mt-4">
+              <CarouselPrevious className="!left-4 md:!left-6" />
+              <CarouselNext className="!right-4 md:!right-6" />
+            </div>
+          </Carousel>
         </div>
       </div>
     </div>
