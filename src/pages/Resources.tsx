@@ -34,6 +34,7 @@ const Resources = () => {
     {
       title: "CV Writing Guide",
       description: "Learn how to create a professional CV that stands out to employers",
+      url: "https://zety.com/blog/novoresume-review?utm_source=google&utm_medium=&utm_campaign=16701424450&utm_term=&network=x&device=c&adposition=&adgroupid=&placement=&utm_source=google&utm_medium=permax&utm_campaign=16701424450&utm_term=&network=x&device=c&adposition=&adgroupid=&placement=&gad_source=1&gad_campaignid=21202293734&gbraid=0AAAAADKztBagP3mw0747ZUZZGXgzmL1qO&gclid=Cj0KCQjw0Y3HBhCxARIsAN7931XCSoT6NL1_tYQe01tdthCT6XYVYW490rLlo7P0DwwzNbQWD6mHM-8aAjhNEALw_wcB",
       icon: FileText,
       category: "Career Tools",
     },
@@ -136,7 +137,17 @@ const Resources = () => {
                     <CardDescription className="text-sm">
                       {resource.description}
                     </CardDescription>
-                  </CardHeader>
+                    </CardHeader>
+                    {resource.url && (
+                      <CardContent>
+                        <a href={resource.url} target="_blank" rel="noopener noreferrer">
+                          <Button variant="default" className="w-full">
+                            Visit Website
+                            <ExternalLink className="ml-2 h-4 w-4" />
+                          </Button>
+                        </a>
+                      </CardContent>
+                    )}
                 </Card>
               );
             })}
