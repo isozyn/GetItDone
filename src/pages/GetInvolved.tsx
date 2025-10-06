@@ -125,6 +125,13 @@ const GetInvolved = () => {
                           ))}
                         </ul>
                       </div>
+                      <div>
+                        <Link to="/contact">
+                          <Button variant="accent" className="w-full mt-4">
+                            Apply
+                          </Button>
+                        </Link>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
