@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 35 40% 97%;
+    --foreground: 220 20% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 20%;
+
+    --primary: 25 85% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 175 60% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 35 30% 92%;
+    --muted-foreground: 220 15% 45%;
+
+    --accent: 45 90% 60%;
+    --accent-foreground: 220 20% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 25% 88%;
+    --input: 35 25% 88%;
+    --ring: 25 85% 55%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --gradient-warm: linear-gradient(135deg, hsl(25 85% 55%), hsl(45 90% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(25 85% 55% / 0.95), hsl(175 60% 40% / 0.95));
+    --gradient-subtle: linear-gradient(180deg, hsl(35 40% 97%), hsl(35 35% 94%));
+    
+    --shadow-soft: 0 4px 20px -4px hsl(25 85% 55% / 0.15);
+    --shadow-card: 0 2px 12px -2px hsl(220 20% 20% / 0.08);
+    --shadow-hover: 0 8px 30px -6px hsl(25 85% 55% / 0.25);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 220 20% 12%;
+    --foreground: 35 40% 95%;
+
+    --card: 220 20% 15%;
+    --card-foreground: 35 40% 95%;
+
+    --popover: 220 20% 15%;
+    --popover-foreground: 35 40% 95%;
+
+    --primary: 25 85% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 175 60% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 20% 20%;
+    --muted-foreground: 35 20% 65%;
+
+    --accent: 45 90% 60%;
+    --accent-foreground: 220 20% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 25%;
+    --input: 220 20% 25%;
+    --ring: 25 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
