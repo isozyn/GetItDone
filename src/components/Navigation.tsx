@@ -23,8 +23,8 @@ const Navigation = () => {
     <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b border-border shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-            <Link to="/" className="flex items-center gap-2 font-bold text-xl">
-              <img src="/Logo.png" alt="Skillbridge Logo" className="h-10 w-auto" />
+            <Link to="/" className="flex items-center gap-1 font-bold text-xl">
+              <img src="/nLogo.png" alt="Skillbridge Logo" className="h-10 w-auto" />
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 GetItDone
               </span>

@@ -37,7 +37,7 @@ const Resources = () => {
       description: "Zety’s AI-powered CV Maker helps you create a standout resume with ease. Just enter your details, choose a design, and let Zety guide you with smart suggestions that make your skills shine",
       icon: FileText,
       category: "Career Tools",
-      link:""
+      link:"https://zety.com/blog/novoresume-review?utm_source=google&utm_medium=&utm_campaign=16701424450&utm_term=&network=x&device=c&adposition=&adgroupid=&placement=&utm_source=google&utm_medium=permax&utm_campaign=16701424450&utm_term=&network=x&device=c&adposition=&adgroupid=&placement=&gad_source=1&gad_campaignid=21202293734&gbraid=0AAAAADKztBagP3mw0747ZUZZGXgzmL1qO&gclid=Cj0KCQjw0Y3HBhCxARIsAN7931XCSoT6NL1_tYQe01tdthCT6XYVYW490rLlo7P0DwwzNbQWD6mHM-8aAjhNEALw_wcB",
     },
     {
       title: "Interview Preparation",
@@ -59,6 +59,7 @@ const Resources = () => {
       icon: GraduationCap,
       category: "Education",
       link: "https://www.coursera.org/"
+
     },
   ];
 
