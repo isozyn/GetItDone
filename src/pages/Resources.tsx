@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ExternalLink, Briefcase, FileText, Users, GraduationCap, TrendingUp } from "lucide-react";
 import { link } from "fs";
 
@@ -33,32 +34,33 @@ const Resources = () => {
 
   const additionalResources = [
     {
-      title: "CV Writing Guide",
-      description: "Learn how to create a professional CV that stands out to employers",
+      title: "Free Online CV Maker",
+      description: "Zety’s AI-powered CV Maker helps you create a standout resume with ease. Just enter your details, choose a design, and let Zety guide you with smart suggestions that make your skills shine",
       icon: FileText,
       category: "Career Tools",
       link:"https://zety.com/blog/novoresume-review?utm_source=google&utm_medium=&utm_campaign=16701424450&utm_term=&network=x&device=c&adposition=&adgroupid=&placement=&utm_source=google&utm_medium=permax&utm_campaign=16701424450&utm_term=&network=x&device=c&adposition=&adgroupid=&placement=&gad_source=1&gad_campaignid=21202293734&gbraid=0AAAAADKztBagP3mw0747ZUZZGXgzmL1qO&gclid=Cj0KCQjw0Y3HBhCxARIsAN7931XCSoT6NL1_tYQe01tdthCT6XYVYW490rLlo7P0DwwzNbQWD6mHM-8aAjhNEALw_wcB",
     },
     {
       title: "Interview Preparation",
-      description: "Tips and techniques for succeeding in job interviews",
+      description: "Boost your confidence with AI-powered mock interviews and real-time feedback.",
       icon: Users,
       category: "Career Tools",
-      link: "https://www.biginterview.com/"
+      link: "https://interview.co/mock-interview"
     },
     {
-      title: "Business Registration",
-      description: "Information on starting your own small business in South Africa",
+      title: "Register Your Business",
+      description: "BizPortal makes it simple for South Africans to register a new company, apply for tax, UIF, and business licenses—all in one place. It’s a fast, official, and reliable way to turn your business idea into reality.",
       icon: TrendingUp,
       category: "Entrepreneurship",
       link: "https://bizportal.gov.za/"
     },
     {
       title: "Continuous Learning",
-      description: "Free online courses and resources for skills development",
+      description: "Discover thousands of free and affordable online courses from top universities and leading companies. Build real-world skills, earn recognized certificates, and learn at your own pace—no matter where you are.",
       icon: GraduationCap,
       category: "Education",
-      link: "https://www.coursera.org/courseraplus?utm_medium=sem&utm_source=gg&utm_campaign=b2c_emea_x_coursera_ftcof_courseraplus_cx_dr_bau_gg_sem_bd-ex_s3_en_m_hyb_24-10_x&campaignid=21836581620&adgroupid=351685085230&device=c&keyword=coursera&matchtype=e&network=g&devicemodel=&creativeid=1449957450648&assetgroupid=&targetid=aud-2244720100243:kwd-36262515261&extensionid=&placement=&gad_source=1&gad_campaignid=21836581620&gbraid=0AAAAADdKX6bkLPBvbTyy0J7bsNgR2oIRQ&gclid=Cj0KCQjw0Y3HBhCxARIsAN7931W1Zj5gS8OGry6thX2imooWnRwjTnN9xnynMHXNs2Wnco_j378PezUaApXUEALw_wcB"
+      link: "https://www.coursera.org/"
+
     },
   ];
 
@@ -138,9 +140,18 @@ const Resources = () => {
                       </span>
                     </div>
                     <CardTitle className="text-lg">{resource.title}</CardTitle>
-                    <CardDescription className="text-sm">
-                      {resource.description}
-                    </CardDescription>
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <CardDescription className="text-sm line-clamp-2 cursor-help">
+                            {resource.description}
+                          </CardDescription>
+                        </TooltipTrigger>
+                        <TooltipContent className="max-w-xs">
+                          <p>{resource.description}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
                   </CardHeader>
                   {resource.link && (
                     <CardContent>

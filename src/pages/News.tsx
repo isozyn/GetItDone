@@ -202,7 +202,7 @@ const News = () => {
               ))}
             </CarouselContent>
 
-            <div className="relative mt-4">
+            <div className="relative mt-8">
               <CarouselPrevious className="!left-4 md:!left-6" />
               <CarouselNext className="!right-4 md:!right-6" />
             </div>

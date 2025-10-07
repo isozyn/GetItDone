@@ -15,8 +15,8 @@ const FAQ = () => {
       category: "General",
       questions: [
         {
-          question: "What is EmpowerSA?",
-          answer: "EmpowerSA is an educational NGO based in South Africa dedicated to reducing unemployment through practical skills training. We offer free workshops in sewing, gardening, and domestic services to help individuals build sustainable livelihoods.",
+          question: "What is GetItDone?",
+          answer: "GetItDone is an educational NGO based in South Africa dedicated to reducing unemployment through practical skills training. We offer free workshops in sewing, gardening, and domestic services to help individuals build sustainable livelihoods.",
         },
         {
           question: "Are the workshops really free?",
@@ -67,7 +67,7 @@ const FAQ = () => {
       ],
     },
     {
-      category: "After Graduation",
+      category: "After Completion",
       questions: [
         {
           question: "Will you help me find a job?",
@@ -75,11 +75,11 @@ const FAQ = () => {
         },
         {
           question: "What is the employment success rate?",
-          answer: "Approximately 85% of our graduates find employment or start their own businesses within 6 months of completing their workshop. We maintain relationships with local businesses actively seeking skilled workers.",
+          answer: "Approximately 85% of our learners find employment or start their own businesses within 6 months of completing their workshop. We maintain relationships with local businesses actively seeking skilled workers.",
         },
         {
           question: "Can I start my own business with these skills?",
-          answer: "Many of our graduates become successful entrepreneurs! We provide basic business skills training as part of each workshop, covering pricing, marketing, and customer service. We also connect you with resources for business registration and microfinance.",
+          answer: "Many of our learners become successful entrepreneurs! We provide basic business skills training as part of each workshop, covering pricing, marketing, and customer service. We also connect you with resources for business registration and microfinance.",
         },
       ],
     },

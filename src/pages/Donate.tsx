@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, Users, GraduationCap, Sparkles, CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Donate = () => {
   const impactAreas = [
@@ -126,16 +127,18 @@ const Donate = () => {
         {/* Donation Options */}
        
             <div className="text-center">
-            <Button variant="hero" size="lg">
-              Donate Now
-            </Button>
-            <div className="mt-20" />
-          </div>
+                <Link to="/contact">
+                  <Button variant="hero" size="lg">
+                    Donate Now
+                  </Button>
+                </Link>
+              <div className="mt-20" />
+            </div>
         {/* Benefits */}
         <div className="mb-16">
           <Card className="shadow-hover gradient-hero text-card">
             <CardHeader>
-              <CardTitle className="text-2xl text-center">Why Donate to EmpowerSA?</CardTitle>
+              <CardTitle className="text-2xl text-center">Why Donate to GetItDone?</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
