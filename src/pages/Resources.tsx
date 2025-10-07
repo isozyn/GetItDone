@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ExternalLink, Briefcase, FileText, Users, GraduationCap, TrendingUp } from "lucide-react";
 import { link } from "fs";
 
@@ -139,9 +140,18 @@ const Resources = () => {
                       </span>
                     </div>
                     <CardTitle className="text-lg">{resource.title}</CardTitle>
-                    <CardDescription className="text-sm">
-                      {resource.description}
-                    </CardDescription>
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <CardDescription className="text-sm line-clamp-2 cursor-help">
+                            {resource.description}
+                          </CardDescription>
+                        </TooltipTrigger>
+                        <TooltipContent className="max-w-xs">
+                          <p>{resource.description}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
                   </CardHeader>
                   {resource.link && (
                     <CardContent>
