@@ -138,7 +138,7 @@ const Donate = () => {
         <div className="mb-16">
           <Card className="shadow-hover gradient-hero text-card">
             <CardHeader>
-              <CardTitle className="text-2xl text-center">Why Donate to EmpowerSA?</CardTitle>
+              <CardTitle className="text-2xl text-center">Why Donate to GetItDone?</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
