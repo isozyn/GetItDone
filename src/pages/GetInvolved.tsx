@@ -153,7 +153,7 @@ const GetInvolved = () => {
               </CardHeader>
               <CardContent className="mt-auto">
                 <Link to="/contact">
-                  <Button variant="default" className="w-full">
+                  <Button variant="hero" className="w-full">
                     Explore Partnership
                   </Button>
                 </Link>

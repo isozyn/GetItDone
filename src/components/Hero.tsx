@@ -5,7 +5,7 @@ import heroImage from "@/assets/hero-image.jpeg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[600px] flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -14,7 +14,7 @@ const Hero = () => {
           className="w-full h-full object-cover"
           style={{ filter: "brightness(0.85)" }}
         />
-        <div className="absolute inset-0 gradient-hero" style={{ opacity: 0.5 }} />
+        <div className="absolute inset-0 gradient-hero" style={{ opacity: 0.4 }} />
       </div>
 
       {/* Content */}

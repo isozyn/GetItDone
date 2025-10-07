@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ExternalLink, Briefcase, FileText, Users, GraduationCap, TrendingUp } from "lucide-react";
-import { link } from "fs";
+
 
 const Resources = () => {
   const jobSites = [
@@ -19,8 +19,8 @@ const Resources = () => {
       icon: Briefcase,
     },
     {
-      name: "PNet",
-      url: "https://www.pnet.co.za",
+      name: "SA Youth",
+      url: "https://sayouth.mobi/Home/Index/EN",
       description: "South Africa's leading online recruitment platform",
       icon: Briefcase,
     },
