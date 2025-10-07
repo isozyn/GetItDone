@@ -2,8 +2,7 @@ import * as React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Tag } from "lucide-react";
-import { 
-
+import {
   Carousel,
   CarouselContent,
   CarouselItem,
@@ -79,7 +78,7 @@ const News = () => {
   const [api, setApi] = React.useState<CarouselApi | null>(null);
   const [isPaused, setIsPaused] = React.useState(false);
 
-  // Autoplay: advance every 7 seconds, reset on user interaction, pause on hover
+  // Autoplay: advance every 7 seconds, reset on user interaction, pause on hover/focus
   React.useEffect(() => {
     if (!api) return;
 
@@ -87,11 +86,10 @@ const News = () => {
     let timer: number | undefined;
 
     const start = () => {
-      // clear any existing timer
       if (timer) window.clearInterval(timer);
       timer = window.setInterval(() => {
         if (!isPaused) api.scrollNext();
-      }, INTERVAL);
+      }, INTERVAL) as unknown as number;
     };
 
     const stop = () => {
@@ -109,7 +107,7 @@ const News = () => {
     // start autoplay
     start();
 
-    // reset autoplay when user interacts (select, pointerDown)
+    // reset autoplay when user interacts
     api.on("select", reset);
     api.on("pointerDown", reset);
 
@@ -131,9 +129,43 @@ const News = () => {
           </p>
         </div>
 
-        {/* Carousel showing all articles (static content turned into a carousel) */}
+        {/* Featured Article */}
+        {articles[0] && (
+          <Card className="mb-12 overflow-hidden shadow-hover rounded-lg">
+            <div className="grid grid-cols-1 lg:grid-cols-2">
+              <div className="relative h-56 lg:h-80">
+                <img
+                  src={articles[0].image}
+                  alt={articles[0].title}
+                  className="w-full h-full object-cover object-center rounded-md"
+                />
+                <div className="absolute top-4 left-4">
+                  <Badge className={getCategoryColor(articles[0].category)}>
+                    Featured
+                  </Badge>
+                </div>
+              </div>
+              <div className="p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <Badge className={getCategoryColor(articles[0].category)}>
+                    <Tag className="h-3 w-3 mr-1" />
+                    {articles[0].category}
+                  </Badge>
+                  <span className="text-sm text-muted-foreground flex items-center gap-1">
+                    <Calendar className="h-3 w-3" />
+                    {articles[0].date}
+                  </span>
+                </div>
+                <h2 className="text-3xl font-bold mb-4">{articles[0].title}</h2>
+                <p className="text-muted-foreground">{articles[0].excerpt}</p>
+              </div>
+            </div>
+          </Card>
+        )}
+
+        {/* Articles Carousel (autoplay every 7s, arrows to navigate) */}
         <div
-          className="mb-12"
+          className="mb-6"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onFocus={() => setIsPaused(true)}
@@ -144,11 +176,11 @@ const News = () => {
               {articles.map((article, index) => (
                 <CarouselItem key={index}>
                   <Card className="overflow-hidden shadow-card hover:shadow-hover h-full">
-                    <div className="relative h-64 md:h-80 lg:h-96">
+                    <div className="relative h-40 md:h-56 lg:h-64">
                       <img
                         src={article.image}
                         alt={article.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-center rounded-md"
                       />
                       <div className="absolute top-4 left-4">
                         <Badge className={getCategoryColor(article.category)}>
@@ -169,8 +201,8 @@ const News = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            {/* Prev/Next controls */}
-            <div className="relative mt-4">
+
+            <div className="relative mt-8">
               <CarouselPrevious className="!left-4 md:!left-6" />
               <CarouselNext className="!right-4 md:!right-6" />
             </div>
