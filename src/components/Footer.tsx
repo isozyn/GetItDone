@@ -125,7 +125,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-secondary-foreground/20 pt-6 text-center text-secondary-foreground/80">
           <p>
-            © {currentYear} GetItDone Educational NGO. All rights reserved.
+            © 2025 GetitDone. All Rights Reserved.
           </p>
         </div>
       </div>
