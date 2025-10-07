@@ -98,7 +98,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "info@empowersa.org",
+      content: "info@GetItDone.org",
     },
     {
       icon: Clock,
