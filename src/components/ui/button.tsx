@@ -17,6 +17,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         hero: "gradient-warm text-primary-foreground hover:shadow-hover transition-smooth font-semibold",
         accent: "bg-accent text-accent-foreground hover:bg-accent/90 shadow-soft transition-smooth",
+        apply: "bg-[#f09030] text-white hover:bg-[#d87f25] shadow-soft transition-smooth",
       },
       size: {
         default: "h-10 px-4 py-2",
@@ -26,7 +27,7 @@ const buttonVariants = cva(
       },
     },
     defaultVariants: {
-      variant: "default",
+      variant: "apply",
       size: "default",
     },
   },

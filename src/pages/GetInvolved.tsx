@@ -127,7 +127,7 @@ const GetInvolved = () => {
                       </div>
                       <div>
                         <Link to="/contact">
-                          <Button variant="accent" className="w-full mt-4">
+                          <Button variant="apply" className="w-full mt-4">
                             Apply
                           </Button>
                         </Link>
