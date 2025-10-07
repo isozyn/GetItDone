@@ -101,7 +101,7 @@ const GetInvolved = () => {
               return (
                 <Card
                   key={index}
-                  className="shadow-card hover:shadow-hover transition-smooth animate-fade-in"
+                  className="shadow-card hover:shadow-hover transition-smooth animate-fade-in flex flex-col"
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
                   <CardHeader>
@@ -111,8 +111,8 @@ const GetInvolved = () => {
                     <CardTitle>{opportunity.title}</CardTitle>
                     <CardDescription>{opportunity.description}</CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
+                  <CardContent className="flex-1 flex flex-col">
+                    <div className="space-y-4 flex-1">
                       <div>
                         <p className="text-sm font-semibold mb-2">Time Commitment:</p>
                         <p className="text-sm text-muted-foreground">{opportunity.commitment}</p>
@@ -125,13 +125,13 @@ const GetInvolved = () => {
                           ))}
                         </ul>
                       </div>
-                      <div>
-                        <Link to="/contact">
-                          <Button variant="accent" className="w-full mt-4">
-                            Apply
-                          </Button>
-                        </Link>
-                      </div>
+                    </div>
+                    <div className="mt-4">
+                      <Link to="/contact">
+                        <Button variant="apply" className="w-full">
+                          Apply
+                        </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>
@@ -144,14 +144,14 @@ const GetInvolved = () => {
         <div className="bg-muted rounded-lg p-8 mb-12">
           <h2 className="text-3xl font-bold mb-6 text-center">Other Ways to Help</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="shadow-card">
+            <Card className="shadow-card flex flex-col">
               <CardHeader>
                 <CardTitle>Corporate Partnerships</CardTitle>
                 <CardDescription>
                   Partner with us to provide job opportunities, sponsor workshops, or offer in-kind donations
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="mt-auto">
                 <Link to="/contact">
                   <Button variant="default" className="w-full">
                     Explore Partnership
@@ -159,14 +159,14 @@ const GetInvolved = () => {
                 </Link>
               </CardContent>
             </Card>
-            <Card className="shadow-card">
+            <Card className="shadow-card flex flex-col">
               <CardHeader>
                 <CardTitle>Make a Donation</CardTitle>
                 <CardDescription>
                   Financial contributions help us provide free training, materials, and support services
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="mt-auto">
                 <Link to="/donate">
                   <Button variant="hero" className="w-full">
                     Donate Now
