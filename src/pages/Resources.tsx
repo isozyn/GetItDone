@@ -33,32 +33,32 @@ const Resources = () => {
 
   const additionalResources = [
     {
-      title: "CV Writing Guide",
-      description: "Learn how to create a professional CV that stands out to employers",
+      title: "Free Online CV Maker",
+      description: "Zety’s AI-powered CV Maker helps you create a standout resume with ease. Just enter your details, choose a design, and let Zety guide you with smart suggestions that make your skills shine",
       icon: FileText,
       category: "Career Tools",
       link:""
     },
     {
       title: "Interview Preparation",
-      description: "Tips and techniques for succeeding in job interviews",
+      description: "Boost your confidence with AI-powered mock interviews and real-time feedback.",
       icon: Users,
       category: "Career Tools",
-      link: ""
+      link: "https://interview.co/mock-interview"
     },
     {
-      title: "Business Registration",
-      description: "Information on starting your own small business in South Africa",
+      title: "Register Your Business",
+      description: "BizPortal makes it simple for South Africans to register a new company, apply for tax, UIF, and business licenses—all in one place. It’s a fast, official, and reliable way to turn your business idea into reality.",
       icon: TrendingUp,
       category: "Entrepreneurship",
       link: "https://bizportal.gov.za/"
     },
     {
       title: "Continuous Learning",
-      description: "Free online courses and resources for skills development",
+      description: "Discover thousands of free and affordable online courses from top universities and leading companies. Build real-world skills, earn recognized certificates, and learn at your own pace—no matter where you are.",
       icon: GraduationCap,
       category: "Education",
-      link: ""
+      link: "https://www.coursera.org/"
     },
   ];
 
