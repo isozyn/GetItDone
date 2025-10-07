@@ -19,8 +19,8 @@ const Resources = () => {
       icon: Briefcase,
     },
     {
-      name: "PNet",
-      url: "https://www.pnet.co.za",
+      name: "SA Youth",
+      url: "https://sayouth.mobi/Home/Index/EN",
       description: "South Africa's leading online recruitment platform",
       icon: Briefcase,
     },
