@@ -1,11 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Scissors, Sprout, Home, Users, Clock, CheckCircle, Shield, ChefHat, ShoppingBag, Sparkles } from "lucide-react";
+import { Scissors, Sprout, Home, Users, Clock, CheckCircle, ChefHat, ShoppingBag, Sparkles } from "lucide-react";
 import workshopSewing from "@/assets/workshop-sewing.jpg";
 import workshopGardening from "@/assets/workshop-gardening.jpg";
 import workshopDomestic from "@/assets/workshop-domestic.jpg";
-import workshopSecurity from "@/assets/workshop-security.jpg";
 import workshopCatering from "@/assets/workshop-catering.jpg";
 import workshopRetail from "@/assets/workshop-retail.jpg";
 import workshopCleaning from "@/assets/workshop-cleaning.jpg";
@@ -58,18 +57,18 @@ const Services = () => {
       ],
     },
     {
-      title: "Security & Protection Services",
-      description: "Professional security guard training covering safety protocols, emergency response, and professional conduct.",
-      image: workshopSecurity,
-      icon: Shield,
-      duration: "8 weeks",
-      spots: "25 per class",
+      title: "Commercial Cleaning & Maintenance",
+      description: "Professional training in commercial cleaning, equipment operation, and facility maintenance.",
+      image: workshopCleaning,
+      icon: Sparkles,
+      duration: "5 weeks",
+      spots: "18 per class",
       features: [
-        "Security protocols and procedures",
-        "Emergency response training",
-        "Conflict resolution skills",
-        "Report writing and documentation",
-        "PSIRA registration assistance",
+        "Industrial cleaning techniques",
+        "Equipment operation and safety",
+        "Chemical handling and storage",
+        "Quality control standards",
+        "Contract cleaning operations",
       ],
     },
     {
@@ -102,21 +101,7 @@ const Services = () => {
         "Professional communication skills",
       ],
     },
-    {
-      title: "Commercial Cleaning & Maintenance",
-      description: "Professional training in commercial cleaning, equipment operation, and facility maintenance.",
-      image: workshopCleaning,
-      icon: Sparkles,
-      duration: "5 weeks",
-      spots: "18 per class",
-      features: [
-        "Industrial cleaning techniques",
-        "Equipment operation and safety",
-        "Chemical handling and storage",
-        "Quality control standards",
-        "Contract cleaning operations",
-      ],
-    },
+    // ...existing code...
   ];
 
   return (
