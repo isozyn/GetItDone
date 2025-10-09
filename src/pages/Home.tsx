@@ -50,6 +50,56 @@ const Home = () => {
         </div>
       </section>
 
+
+      {/* Sponsors Section */}
+      <section className="py-8 bg-background">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">Our Sponsors</h2>
+        <div className="mt-10 flex  gap-6 justify-center">
+            <div className="h-20 w-20 flex items-center justify-center">
+              <img
+                src="/nedBLogo.png"
+                alt="Sponsor Name"
+                className="h-full w-full object-contain"
+              />
+            </div>
+            <div className="h-20 w-20 flex items-center justify-center">
+              <img
+                src="/FLM.png"
+                alt="Sponsor Name"
+                className="h-full w-full object-contain"
+              />
+            </div>
+            <div className="h-20 w-20 flex items-center justify-center">
+              <img
+                src="/SRLogo.png"
+                alt="Sponsor Name"
+                className="h-full w-full object-contain"
+              />
+            </div>
+            <div className="h-20 w-20 flex items-center justify-center">
+              <img
+                src="/YESLogo.png"
+                alt="Sponsor Name"
+                className="h-full w-full object-contain"
+              />
+            </div>
+            <div className="h-20 w-20 flex items-center justify-center">
+              <img
+                src="/UVULogo.png"
+                alt="Sponsor Name"
+                className="h-full w-full object-contain"
+              />
+            </div>
+            <div className="h-20 w-20 flex items-center justify-center">
+              <img
+                src="/StodelsLogo.png"
+                alt="Sponsor Name"
+                className="h-full w-full object-contain"
+              />
+            </div>
+          </div>
+        </section>
+
       {/* Featured Workshops */}
       <section className="py-16">
         <div className="container mx-auto px-4">

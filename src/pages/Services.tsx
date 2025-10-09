@@ -107,15 +107,28 @@ const Services = () => {
   return (
     <div className="min-h-screen py-12">
       <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-12 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Workshops</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Free, high-quality training programs designed to equip you with practical skills 
-            for sustainable employment
-          </p>
-        </div>
+        <div className="h-screen flex flex-col justify-top">
+          {/* Header */}
+          <div className="text-center mb-8 animate-fade-in">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Workshops</h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Free, high-quality training programs designed to equip you with practical skills 
+              for sustainable employment
+            </p>
+          </div>
 
+          <div className="w-full flex justify-center items-center mb-12 animate-fade-in">
+            <div className="w-full max-w-3xl aspect-video bg-muted rounded-lg shadow-card overflow-hidden flex items-center justify-center">
+              <video
+                src="/workshops.mp4"
+                className="w-full h-full object-contain"
+                style={{ maxHeight: '400px' }}
+                controls
+              />
+            </div>
+          </div>
+
+        </div>
         {/* Workshops - Grid Layout Like Get Involved */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {workshops.map((workshop, index) => {
