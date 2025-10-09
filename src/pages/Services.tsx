@@ -123,7 +123,10 @@ const Services = () => {
                 src="/workshops.mp4"
                 className="w-full h-full object-contain"
                 style={{ maxHeight: '400px' }}
-                controls
+                autoPlay
+                muted
+                playsInline
+                loop
               />
             </div>
           </div>
