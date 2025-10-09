@@ -12,7 +12,7 @@ const Hero = () => {
           src={heroImage}
           alt="Community members learning new skills together"
           className="w-full h-full object-cover"
-          style={{ filter: "brightness(0.85)" }}
+          style={{ filter: "brightness(0.15)" }}
         />
         <div className="absolute inset-0 gradient-hero" style={{ opacity: 0.4 }} />
       </div>
@@ -20,9 +20,9 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-3xl animate-fade-in">
-          <div className="inline-flex items-center gap-2 bg-accent/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-            <Heart className="h-4 w-4 text-accent" fill="currentColor" />
-            <span className="text-sm font-medium text-card">Transforming Lives Through Education</span>
+          <div className="inline-flex items-center gap-4 mb-6">
+            <img src="/nLogo.png" alt="Skillbridge Logo" className="h-20 w-auto" />
+            <span className="text-7xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">GetItDone</span>
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-card">
@@ -53,7 +53,7 @@ const Hero = () => {
               <div className="flex items-center gap-3">
                 <GraduationCap className="h-8 w-8 text-accent" />
                 <div>
-                  <div className="text-2xl font-bold text-card">12</div>
+                  <div className="text-2xl font-bold text-card">6</div>
                   <div className="text-sm text-card/80">Skills Programs</div>
                 </div>
               </div>
@@ -87,9 +87,11 @@ const Hero = () => {
                 Donate Now
               </Button>
             </Link>
+            
           </div>
         </div>
       </div>
+      
     </section>
   );
 };
