@@ -22,7 +22,7 @@ const Hero = () => {
         <div className="max-w-3xl animate-fade-in">
           <div className="inline-flex items-center gap-4 mb-6">
             <img src="/nLogo.png" alt="Skillbridge Logo" className="h-20 w-auto" />
-            <span className="text-7xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">GetItDone</span>
+            <span className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">GetItDone</span>
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-card">
