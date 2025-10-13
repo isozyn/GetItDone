@@ -130,7 +130,7 @@ const FAQ = () => {
                   <AccordionItem
                     key={faqIndex}
                     value={`${sectionIndex}-${faqIndex}`}
-                    className="border rounded-lg px-6 shadow-card hover:shadow-hover transition-smooth"
+                    className="border-2 border-orange-200 rounded-lg px-6 shadow-card hover:shadow-hover transition-smooth"
                   >
                     <AccordionTrigger className="text-left font-semibold">
                       {faq.question}
@@ -146,7 +146,7 @@ const FAQ = () => {
         </div>
 
         {/* Still Have Questions CTA */}
-        <Card className="max-w-2xl mx-auto shadow-hover">
+        <Card className="border-2 border-orange-200 shadow-card max-w-2xl mx-auto shadow-hover">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl">Still Have Questions?</CardTitle>
             <CardDescription>

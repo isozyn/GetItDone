@@ -84,7 +84,7 @@ const Resources = () => {
               return (
                 <Card
                   key={index}
-                  className="shadow-card hover:shadow-hover transition-smooth animate-fade-in"
+                  className="border-2 border-orange-200 shadow-card hover:shadow-hover transition-smooth animate-fade-in"
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
                   <CardHeader>
@@ -127,7 +127,7 @@ const Resources = () => {
               return (
                 <Card
                   key={index}
-                  className="text-center shadow-card hover:shadow-hover transition-smooth animate-fade-in"
+                  className="text-center border-2 border-orange-200 shadow-card hover:shadow-hover transition-smooth animate-fade-in"
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
                   <CardHeader>
@@ -170,7 +170,7 @@ const Resources = () => {
         </div>
 
         {/* Download Resources CTA */}
-        <div className="gradient-hero rounded-lg p-8 text-center text-card">
+        <div className="border-2 border-orange-200 shadow-card gradient-hero rounded-lg p-8 text-center text-card">
           <h2 className="text-3xl font-bold mb-4">Need More Help?</h2>
           <p className="text-lg mb-6 max-w-2xl mx-auto opacity-90">
             Our career counselors are available to help you with CV writing, job applications, 

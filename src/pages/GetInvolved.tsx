@@ -63,7 +63,7 @@ const GetInvolved = () => {
 
         {/* Impact Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          <Card className="text-center shadow-card">
+          <Card className="text-center border-2 border-orange-200 shadow-card ">
             <CardHeader>
               <div className="mx-auto w-12 h-12 rounded-full gradient-warm flex items-center justify-center mb-2">
                 <Users className="h-6 w-6 text-primary-foreground" />
@@ -72,7 +72,7 @@ const GetInvolved = () => {
               <CardDescription>Active Volunteers</CardDescription>
             </CardHeader>
           </Card>
-          <Card className="text-center shadow-card">
+          <Card className="border-2 border-orange-200 shadow-card text-center">
             <CardHeader>
               <div className="mx-auto w-12 h-12 rounded-full bg-secondary flex items-center justify-center mb-2">
                 <Heart className="h-6 w-6 text-secondary-foreground" fill="currentColor" />
@@ -81,7 +81,7 @@ const GetInvolved = () => {
               <CardDescription>Volunteer Hours This Year</CardDescription>
             </CardHeader>
           </Card>
-          <Card className="text-center shadow-card">
+          <Card className="text-center border-2 border-orange-200 shadow-card ">
             <CardHeader>
               <div className="mx-auto w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-2">
                 <GraduationCap className="h-6 w-6 text-accent-foreground" />
@@ -101,7 +101,7 @@ const GetInvolved = () => {
               return (
                 <Card
                   key={index}
-                  className="shadow-card hover:shadow-hover transition-smooth animate-fade-in flex flex-col"
+                  className="border-2 border-orange-200 shadow-card  hover:shadow-hover transition-smooth animate-fade-in flex flex-col"
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
                   <CardHeader>
@@ -144,7 +144,7 @@ const GetInvolved = () => {
         <div className="bg-muted rounded-lg p-8 mb-12">
           <h2 className="text-3xl font-bold mb-6 text-center">Other Ways to Help</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="shadow-card flex flex-col">
+            <Card className="border-2 border-orange-200 shadow-card  flex flex-col">
               <CardHeader>
                 <CardTitle>Corporate Partnerships</CardTitle>
                 <CardDescription>
@@ -159,7 +159,7 @@ const GetInvolved = () => {
                 </Link>
               </CardContent>
             </Card>
-            <Card className="shadow-card flex flex-col">
+            <Card className="border-2 border-orange-200 shadow-card  flex flex-col">
               <CardHeader>
                 <CardTitle>Make a Donation</CardTitle>
                 <CardDescription>
@@ -178,7 +178,7 @@ const GetInvolved = () => {
         </div>
 
         {/* Apply CTA */}
-        <div className="text-center gradient-hero rounded-lg p-12 text-card">
+        <div className="border-2 border-orange-200 shadow-card text-center gradient-hero rounded-lg p-12 text-card">
           <h2 className="text-3xl font-bold mb-4">Ready to Make a Difference?</h2>
           <p className="text-lg mb-6 max-w-2xl mx-auto opacity-90">
             Fill out our volunteer application form and we'll be in touch to discuss the best fit for your skills and availability.
