@@ -122,7 +122,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="animate-fade-in">
-            <Card className="shadow-card">
+            <Card className="border-2 border-orange-200 shadow-card">
               <CardHeader>
                 <CardTitle>Send Us a Message</CardTitle>
                 <CardDescription>
@@ -228,7 +228,7 @@ const Contact = () => {
                 {contactInfo.map((info, index) => {
                   const Icon = info.icon;
                   return (
-                    <Card key={index} className="shadow-card">
+                    <Card key={index} className="border-2 border-orange-200 shadow-card">
                       <CardContent className="p-6">
                         <div className="flex items-start gap-4">
                           <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">

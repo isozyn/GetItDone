@@ -118,7 +118,7 @@ const Services = () => {
           </div>
 
           <div className="w-full flex justify-center items-center mb-12 animate-fade-in">
-            <div className="w-full max-w-3xl aspect-video bg-muted rounded-lg shadow-card overflow-hidden flex items-center justify-center">
+            <div className="border-2 border-orange-200 shadow-card w-full max-w-3xl aspect-video bg-muted rounded-lg shadow-card overflow-hidden flex items-center justify-center">
               <video
                 src="/workshops.mp4"
                 className="w-full h-full object-contain"
@@ -133,23 +133,23 @@ const Services = () => {
 
         </div>
         {/* Workshops - Grid Layout Like Get Involved */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-20 mb-12">
           {workshops.map((workshop, index) => {
             const Icon = workshop.icon;
             return (
               <Card
                 key={index}
-                className="shadow-card hover:shadow-hover transition-smooth animate-fade-in flex flex-col"
+                className="border-2 border-orange-200 shadow-card hover:shadow-hover transition-smooth animate-fade-in flex flex-col"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="w-full h-48 rounded-t-lg overflow-hidden">
+                <div className="w-full h-32 rounded-t-lg overflow-hidden">
                   <img
                     src={workshop.image}
                     alt={workshop.title}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <CardHeader className="flex flex-col items-center p-6">
+                <CardHeader className="flex flex-col items-center p-4">
                   <div className="w-12 h-12 rounded-full gradient-warm flex items-center justify-center mb-4">
                     <Icon className="h-6 w-6 text-primary-foreground" />
                   </div>

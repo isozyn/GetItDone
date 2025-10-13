@@ -131,7 +131,7 @@ const News = () => {
 
         {/* Featured Article */}
         {articles[0] && (
-          <Card className="mb-12 overflow-hidden shadow-hover rounded-lg">
+          <Card className="border-2 border-orange-200 shadow-card mb-12 overflow-hidden shadow-hover rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="relative h-56 lg:h-80">
                 <img
@@ -175,7 +175,7 @@ const News = () => {
             <CarouselContent className="items-stretch">
               {articles.map((article, index) => (
                 <CarouselItem key={index}>
-                  <Card className="overflow-hidden shadow-card hover:shadow-hover h-full">
+                  <Card className="overflow-hidden border-2 border-orange-200 shadow-card hover:shadow-hover h-full">
                     <div className="relative h-40 md:h-56 lg:h-64">
                       <img
                         src={article.image}

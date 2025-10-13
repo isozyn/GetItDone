@@ -67,7 +67,7 @@ const Home = () => {
               return (
                 <Card
                   key={index}
-                  className="group hover:shadow-hover transition-smooth overflow-hidden animate-fade-in"
+                  className="border-2 border-orange-200 shadow-card group hover:shadow-hover transition-smooth overflow-hidden animate-fade-in"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="relative h-48 overflow-hidden">
@@ -110,9 +110,13 @@ const Home = () => {
 
       {/* Call to Action Sections */}
       <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 text-center mb-12">
+           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get Involved</h2>
+           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+            Your involvement can spark change—start today!
+           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center shadow-card hover:shadow-hover transition-smooth">
+            <Card className="text-center border-2 border-orange-200 shadow-card hover:shadow-hover transition-smooth">
               <CardHeader>
                 <div className="mx-auto w-12 h-12 rounded-full gradient-warm flex items-center justify-center mb-4">
                   <Heart className="h-6 w-6 text-primary-foreground" fill="currentColor" />
@@ -131,7 +135,7 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            <Card className="text-center shadow-card hover:shadow-hover transition-smooth">
+            <Card className="text-center border-2 border-orange-200 shadow-card hover:shadow-hover transition-smooth">
               <CardHeader>
                 <div className="mx-auto w-12 h-12 rounded-full bg-secondary flex items-center justify-center mb-4">
                   <HandHeart className="h-6 w-6 text-secondary-foreground" />
@@ -150,7 +154,7 @@ const Home = () => {
               </CardContent>
             </Card>
 
-            <Card className="text-center shadow-card hover:shadow-hover transition-smooth">
+            <Card className="text-center border-2 border-orange-200 shadow-card hover:shadow-hover transition-smooth">
               <CardHeader>
                 <div className="mx-auto w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-4">
                   <Newspaper className="h-6 w-6 text-accent-foreground" />

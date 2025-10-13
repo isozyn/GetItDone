@@ -40,7 +40,7 @@ const Hero = () => {
 
           {/* Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
-            <div className="bg-card/10 backdrop-blur-sm rounded-lg p-4 border border-card/20">
+            <div className="border-2 border-orange-200 shadow-card bg-card/10 backdrop-blur-sm rounded-lg p-4 border border-card/20">
               <div className="flex items-center gap-3">
                 <Users className="h-8 w-8 text-accent" />
                 <div>
@@ -49,7 +49,7 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-card/10 backdrop-blur-sm rounded-lg p-4 border border-card/20">
+            <div className="border-2 border-orange-200 shadow-card bg-card/10 backdrop-blur-sm rounded-lg p-4 border border-card/20">
               <div className="flex items-center gap-3">
                 <GraduationCap className="h-8 w-8 text-accent" />
                 <div>
@@ -58,7 +58,7 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-card/10 backdrop-blur-sm rounded-lg p-4 border border-card/20">
+            <div className="border-2 border-orange-200 shadow-card bg-card/10 backdrop-blur-sm rounded-lg p-4 border border-card/20">
               <div className="flex items-center gap-3">
                 <Heart className="h-8 w-8 text-accent" fill="currentColor" />
                 <div>
