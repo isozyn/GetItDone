@@ -39,14 +39,14 @@ const News = () => {
       date: "February 28, 2025",
       category: "Success Story",
       excerpt: "Sarah completed our sewing workshop in 2023 and now runs her own successful tailoring business, employing three other graduates from our program.",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
+      image: "/sarah.jpeg",
     },
     {
       title: "Urban Gardening Workshop Wins Community Award",
       date: "February 20, 2025",
       category: "Recognition",
       excerpt: "Our innovative urban gardening program has been recognized by the Johannesburg Municipality for its contribution to food security and community development.",
-      image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=800&q=80",
+      image: "/gardening.webp",
     },
     {
       title: "Volunteer Appreciation Event: Thank You!",
@@ -165,18 +165,18 @@ const News = () => {
 
         {/* Articles Carousel (autoplay every 7s, arrows to navigate) */}
         <div
-          className="mb-6"
+          className="mb-6 w-full relative"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onFocus={() => setIsPaused(true)}
           onBlur={() => setIsPaused(false)}
         >
           <Carousel className="w-full" setApi={(a) => setApi(a)}>
-            <CarouselContent className="items-stretch">
+            <CarouselContent className="items-stretch w-full">
               {articles.map((article, index) => (
-                <CarouselItem key={index}>
-                  <Card className="overflow-hidden border-2 border-orange-200 shadow-card hover:shadow-hover h-full">
-                    <div className="relative h-40 md:h-56 lg:h-64">
+                <CarouselItem key={index} className="w-full">
+                  <Card className="overflow-hidden border-2 border-orange-200 shadow-card hover:shadow-hover h-full w-full">
+                    <div className="relative h-64 md:h-90 lg:h-[28rem]">
                       <img
                         src={article.image}
                         alt={article.title}
@@ -201,10 +201,19 @@ const News = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-
-            <div className="relative mt-8">
-              <CarouselPrevious className="!left-4 md:!left-6" />
-              <CarouselNext className="!right-4 md:!right-6" />
+            {/* Floating Carousel Arrows - Independently positioned */}
+            <div className="absolute top-0 left-0 right-0 h-64 md:h-90 lg:h-[28rem] pointer-events-none">
+              {/* Left Arrow */}
+              <div className="absolute left-4 top-1/2 -translate-y-1/2">
+                <CarouselPrevious className="w-12 h-12 !bg-orange-300 text-white !border-none shadow-2xl rounded-full hover:!bg-orange-600 focus:!bg-orange-600 transition-transform transform hover:scale-110 hover:-translate-y-1 z-20 pointer-events-auto" />
+              </div>
+              {/* Right Arrow */}
+              <div className="absolute right-8 top-1/2 -translate-y-1/2">
+                <CarouselNext 
+                  className="w-12 h-12 !bg-orange-300 text-white !border-none shadow-2xl rounded-full hover:!bg-orange-600 focus:!bg-orange-600 transition-transform transform hover:scale-110 hover:-translate-y-1 z-20 pointer-events-auto" 
+                  style={{ backgroundColor: 'rgb(253 186 116)' }}
+                />
+              </div>
             </div>
           </Carousel>
         </div>
