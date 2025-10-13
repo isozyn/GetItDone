@@ -133,11 +133,11 @@ const News = () => {
         {articles[0] && (
           <Card className="border-2 border-orange-200 shadow-card mb-12 overflow-hidden shadow-hover rounded-lg">
             <div className="grid grid-cols-1 lg:grid-cols-2">
-              <div className="relative h-56 lg:h-80">
+              <div className="relative h-56 lg:h-80 ">
                 <img
                   src={articles[0].image}
                   alt={articles[0].title}
-                  className="w-full h-full object-cover object-center rounded-md"
+                  className="border-2 border-orange-200 shadow-card w-full h-full object-cover object-center rounded-md"
                 />
                 <div className="absolute top-4 left-4">
                   <Badge className={getCategoryColor(articles[0].category)}>
@@ -180,7 +180,7 @@ const News = () => {
                       <img
                         src={article.image}
                         alt={article.title}
-                        className="w-full h-full object-cover object-center rounded-md"
+                        className="border-2 border-orange-200 shadow-card w-full h-full object-cover object-center rounded-md"
                       />
                       <div className="absolute top-4 left-4">
                         <Badge className={getCategoryColor(article.category)}>
