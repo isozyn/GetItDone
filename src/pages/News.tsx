@@ -32,7 +32,7 @@ const News = () => {
       date: "March 5, 2025",
       category: "Partnership",
       excerpt: "Three major local businesses have committed to hiring our graduates, creating over 100 job opportunities in domestic services and gardening sectors.",
-      image: "https://images.unsplash.com/photo-1560472355-536de3962603?auto=format&fit=crop&w=800&q=80",
+      image: "Jobs.jpg",
     },
     {
       title: "Meet Sarah: From Unemployment to Business Owner",
@@ -53,7 +53,7 @@ const News = () => {
       date: "February 15, 2025",
       category: "Event",
       excerpt: "Last weekend, we celebrated our amazing volunteers who have contributed over 1,200 hours this year. Thank you for making our mission possible!",
-      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80",
+      image: "/volunteer.jpg",
     },
   ];
 
