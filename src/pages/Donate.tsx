@@ -63,7 +63,7 @@ const Donate = () => {
 
         {/* Impact Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          <Card className="text-center shadow-card">
+          <Card className="text-center border-2 border-orange-200 shadow-card">
             <CardHeader>
               <div className="mx-auto w-12 h-12 rounded-full gradient-warm flex items-center justify-center mb-2">
                 <Users className="h-6 w-6 text-primary-foreground" />
@@ -72,7 +72,7 @@ const Donate = () => {
               <CardDescription>Lives Transformed This Year</CardDescription>
             </CardHeader>
           </Card>
-          <Card className="text-center shadow-card">
+          <Card className="text-center border-2 border-orange-200 shadow-card">
             <CardHeader>
               <div className="mx-auto w-12 h-12 rounded-full bg-secondary flex items-center justify-center mb-2">
                 <GraduationCap className="h-6 w-6 text-secondary-foreground" />
@@ -81,7 +81,7 @@ const Donate = () => {
               <CardDescription>Graduate Employment Rate</CardDescription>
             </CardHeader>
           </Card>
-          <Card className="text-center shadow-card">
+          <Card className="text-center border-2 border-orange-200 shadow-card">
             <CardHeader>
               <div className="mx-auto w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-2">
                 <Heart className="h-6 w-6 text-accent-foreground" fill="currentColor" />
@@ -101,7 +101,7 @@ const Donate = () => {
               return (
                 <Card
                   key={index}
-                  className="shadow-card hover:shadow-hover transition-smooth animate-fade-in"
+                  className="border-2 border-orange-200 shadow-card hover:shadow-hover transition-smooth animate-fade-in"
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
                   <CardHeader>
@@ -136,7 +136,7 @@ const Donate = () => {
             </div>
         {/* Benefits */}
         <div className="mb-16">
-          <Card className="shadow-hover gradient-hero text-card">
+          <Card className="border-2 border-orange-200 shadow-card shadow-hover gradient-hero text-card">
             <CardHeader>
               <CardTitle className="text-2xl text-center">Why Donate to GetItDone?</CardTitle>
             </CardHeader>
